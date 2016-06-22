@@ -1,20 +1,37 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-<title>
-  </title>
-<head id ='head'>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <div id="imgFish">
-
-  <img src ="salmon.png" alt= "" width=100% height = "300"/>
-<span>Welcome to My Store</span>
-  </div>
+  <head>
+    <meta charset="utf-8">
+    <title>Cookie Stand</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-<body>
-  <h1> Day6 Assignment</h1>
-<table id = "Cookies"></table>
+  <body>
+    <div class="container">
+      <h1>Welcome to My Store!</h1>
+      <img src ="salmon.png" alt= "" width=100% height = "300"/>
+    </div>
+    <form id="location-name">
+    <fieldset>
+      <legend>location submission form</legend>
 
-  <script src = "app2.js" ></script>
-</body>
+      <label for="which">location Name: </label>
+      <input id = "which" name="which" type="text" />
 
+      <label for="newMin">min: </label>
+      <input id = "newMin" name="newMin" type="text" />
+
+      <label for="newMax">max: </label>
+      <input id = "newMax" name="newMax" type="text" />
+
+      <label for="newAvg">average: </label>
+      <input id = "newAvg" name="newAvg" type="text" />
+
+      <input type="submit" value="Create New Location">
+    </fieldset>
+    </form>
+    <table id = "Cookies"></table>
+
+
+  <script src = "app2.js"></script>
+  </body>
 </html>

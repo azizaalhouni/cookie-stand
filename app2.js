@@ -55,24 +55,29 @@ function tableHead() {
   holdTable.appendChild(trElhead);
 };
 
+LocationObj.prototype.render = function(){
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.locationName;
+  trEl.appendChild(tdEl);
+  var tdElFirst = document.createElement('td');
+  tdElFirst.textContent = this.totalDailyCookieSales;
+  sum = sum + this.totalDailyCookieSales;
+  trEl.appendChild(tdElFirst);
+  for(var j = 0 ; j < hours.length ; j++){
+    var tdEl1 = document.createElement('td');
+    tdEl1.textContent = this.cookiesEachHourArray[j];
+    trEl.appendChild(tdEl1);
+  }
+  holdTable.appendChild(trEl);
+
+};
 function tableBody() {
   for(var i = 0 ; i < stores.length ; i++) {
-    var trEl = document.createElement('tr');
-    var tdEl = document.createElement('td');
-    tdEl.textContent = stores[i].locationName;
-    trEl.appendChild(tdEl);
-    var tdElFirst = document.createElement('td');
-    tdElFirst.textContent = stores[i].totalDailyCookieSales;
-    sum = sum + stores[i].totalDailyCookieSales;
-    trEl.appendChild(tdElFirst);
-    for(var j = 0 ; j < hours.length ; j++){
-      var tdEl1 = document.createElement('td');
-      tdEl1.textContent = stores[i].cookiesEachHourArray[j];
-      trEl.appendChild(tdEl1);
-    }
-    holdTable.appendChild(trEl);
+    stores[i].render();
   }
 };
+
 function tableFooter() {
   var trElFooter = document.createElement('tr');
   var tdElFooter = document.createElement('td');
@@ -87,4 +92,19 @@ function tableFooter() {
 
 tableHead();
 tableBody();
-tableFooter();
+//tableFooter();
+
+var newStoreForm = document.getElementById('location-name');
+
+newStoreForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  if (!event.target.which.value && !event.target.newMin.value && !event.target.newMax.value && !event.target.newAvg.value) {
+    return alert('Cannot be empty!');
+  }
+  var newStoreName = event.target.which.value;
+  var newMinimum = parseFloat(event.target.newMin.value);
+  var newMaximum = parseFloat(event.target.newMax.value);
+  var newAverage = parseFloat(event.target.newAvg.value);
+  var newStore = new LocationObj (newStoreName, newMinimum, newMaximum, newAverage);
+  newStore.render();
+});
