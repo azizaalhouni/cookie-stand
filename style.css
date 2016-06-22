@@ -1,3 +1,47 @@
-*{
-  outline: 1px dotted red;
+* {
+color: black;
+  background-color:#dab877;
+
+}
+.head{
+
+  font-family:serif;
+  font-size: 30px;
+}
+table, td {
+	border: 1px solid black;
+  color:brown;
+}
+
+td {
+	padding: 10px;
+	border-radius: 15px;
+  font-family:sans-serif;
+}
+
+th {
+	background-color: navy;
+	color: white;
+}
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+span {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width:100%;
+   text-align:center;
+   padding:0px;
+   font-family:serif;
+   font-color: red;
+   }
+   .imgFish{
+     font-family:serif;
+   }
+h1{
+  font-family:serif;
+  font-style: italic;
 }
