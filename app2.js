@@ -37,16 +37,12 @@ var capitolHill	= new LocationObj('Capitol Hill',20,38,	2.3);
 var alki = new LocationObj('Alki',2	,16,4.6);
 
 var stores = [pikePlace, seaTacAirport,seattleCenter, capitolHill, alki];
-var headerTable = ['Daily Location total','6:00am', '7:00am', '8:00am', '9:00am', '10:00am' , '11:00am' , '12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
+var headerTable = [' ','Daily Location total','6:00am', '7:00am', '8:00am', '9:00am', '10:00am' , '11:00am' , '12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
 var sum = 0;
 var holdTable = document.getElementById('Cookies');
 
-
 function tableHead() {
   var trElhead = document.createElement('tr');
-  tdElhead = document.createElement('td');
-  tdElhead.textContent = ' ';
-  trElhead.appendChild(tdElhead);
   for(var k = 0; k < headerTable.length ; k++) {
     tdElhead = document.createElement('td');
     tdElhead.textContent = headerTable[k];
